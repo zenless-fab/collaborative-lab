@@ -11,7 +11,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
     SHELL=/bin/zsh
 
 RUN --mount=type=bind,source=setup.sh,target=/tmp/setup.sh \
-    /tmp/setup.sh \
+    chmod +x /tmp/setup.sh \
+    && /tmp/setup.sh \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=uv /uv /uvx /bin/
