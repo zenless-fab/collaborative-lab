@@ -1,0 +1,11 @@
+huggingface_hub[hf_xet,cli]
+datasets
+numpy
+pandas
+scikit-learn
+scipy
+polars[all]
+dask[complete]
+ray[data,train,tune]
+duckdb
+seaborn[stats]
