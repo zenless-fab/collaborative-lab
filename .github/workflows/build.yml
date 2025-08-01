@@ -83,6 +83,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           flavor: |
             prefix=${{ matrix.target }}-
+            latest=false
           tags: |
             type=schedule,pattern=nightly
             type=raw,value=${{ matrix.target }},enable={{is_default_branch}},prefix=,suffix=
@@ -145,6 +146,7 @@ jobs:
           flavor: |
             prefix=${{ matrix.target }}-${{ matrix.param.cuda }}-
             suffix=-${{ matrix.param.system }}
+            latest=false
           tags: |
             type=schedule,pattern=nightly
             type=raw,value=${{ matrix.target }}-${{ matrix.param.cuda }}-${{ matrix.param.system }},enable={{is_default_branch}},prefix=,suffix=
